@@ -15,7 +15,7 @@ bool solution(vector<string> phone_book) {
     for(auto it = phones.begin(); it != phones.end(); it++){
         string prefix = "";
         // 본인과 겹치는 경우 방지 i-1까지만 
-        string number = *it;
+        const string &number = *it;
         for(int i = 0; i< number.length() - 1; i++){
             prefix.push_back(number[i]);
             if(phones.find(prefix) != phones.end()) return false;
